@@ -1,23 +1,28 @@
-# Weather app
+# Image loading library
 
 ## App features:
-Introducing a weather forecast application.
+1. Image loading library
+   Implement a library that will download and cache an image. It should receive
+   the following input parameters:
 
-Upon launching the application, users are greeted with a search bar. Simultaneously, the app harnesses the power of GPS technology to effortlessly detect the user's current location. The search bar is intelligently populated with the current location, offering users instant access to the local weather forecast.
+● Url
+● Placeholder
+● Some view, that the image loading library will assign the image to (it
+should support both UIKit and SwiftUI )
+Cached image should be valid for 4h. Also the library should support a manual
+cache invalidation.
 
-Underneath the search bar, users can quickly view the up-to-the-minute weather forecast for their current location.
-
-The app empowers users to explore weather updates for other cities. By simply entering the desired city name into the search bar, users can easily retrieve detailed weather forecasts.
-
-- Use of https://openweathermap.org/api.
-
-## Screenshots
-
-<img src="screenshots/screenshots.png"/>
+3. Example app
+   ● Fetch a json with the images url list
+   ● Build a screen with the list of loaded images, each view should display the
+   loaded image (or a placeholder while loading) and it’s id (both id and url can
+   can be found within the JSON loaded earlier)
+   ● Add a button which will invalidate the cache by tap.
+   ● The app can be built either with Java or Kotlin, the library should support
+   both.
 
 ## Architecture
 - Written in Kotlin.
-- Built with [Jetpack Compose](https://developer.android.com/jetpack/compose).
 - Clean architecture, MVVM
 
 # Library references
@@ -28,6 +33,3 @@ The app empowers users to explore weather updates for other cities. By simply en
 - ViewModel - Stores UI-related data that isn't destroyed on UI changes.
 - Room - Used to create room db and store the data.
 - Retrofit - Used for REST api communication.
-- Coil - Used for displaying and downloading images
-- Lottie - Used for displaying custom animations
-- Mockk - Used for Test Implementation
