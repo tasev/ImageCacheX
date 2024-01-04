@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ImageCacheX</string>
+    <string name="clear_cache">Invalidate Cache</string>
+</resources>
